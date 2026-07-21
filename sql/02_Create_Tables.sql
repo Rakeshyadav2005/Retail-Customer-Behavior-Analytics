@@ -1,25 +1,25 @@
 USE retail_analytics;
 CREATE TABLE events (
-    timestamp DATETIME,
-    visitorid BIGINT,
-    event VARCHAR(20),
-    itemid BIGINT,
-    transactionid VARCHAR(20)
+    timestamp DATETIME NOT NULL,
+    visitorid BIGINT NOT NULL,
+    event VARCHAR(20) NOT NULL,
+    itemid BIGINT NOT NULL,
+    transactionid BIGINT NULL
 );
 desc events;
 
-CREATE TABLE categories(
-categoryid INT,
-parentid INT
+CREATE TABLE categories (
+    categoryid BIGINT PRIMARY KEY,
+    parentid BIGINT NULL
 );
 
 DESC categories;
 
-CREATE TABLE properties(
-timestamp DATETIME,
-itemid BIGINT,
-property VARCHAR(100),
-value VARCHAR(225)
+CREATE TABLE properties (
+    timestamp DATETIME NOT NULL,
+    itemid BIGINT NOT NULL,
+    property VARCHAR(100) NOT NULL,
+    value VARCHAR(255) NOT NULL
 );
 
 DESC properties;
