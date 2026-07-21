@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 # MySQL Connection
 # ===========================
 USERNAME = "root"
-PASSWORD = "2329"
+PASSWORD = "YOUR_PASSWORD"
 HOST = "localhost"
 PORT = "3306"
 DATABASE = "retail_analytics"

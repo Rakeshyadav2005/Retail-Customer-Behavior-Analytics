@@ -13,7 +13,7 @@ from sqlalchemy import create_engine
 # MySQL Connection
 # -----------------------------
 USERNAME = "root"
-PASSWORD = "2329"   # Replace with your MySQL password
+PASSWORD = "YOUR_PASSWORD"   # Replace with your MySQL password
 HOST = "localhost"
 PORT = "3306"
 DATABASE = "retail_analytics"
