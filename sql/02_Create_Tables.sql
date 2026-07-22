@@ -27,3 +27,17 @@ DESC events;
 DESC categories;
 
 SHOW TABLES;
+
+CREATE INDEX idx_events_timestamp ON events(timestamp);
+CREATE INDEX idx_events_visitorid ON events(visitorid);
+CREATE INDEX idx_events_itemid ON events(itemid);
+CREATE INDEX idx_events_transactionid ON events(transactionid);
+
+CREATE INDEX idx_categories_parentid ON categories(parentid);
+
+CREATE INDEX idx_properties_timestamp
+ON properties(timestamp);
+CREATE INDEX idx_properties_itemid ON properties(itemid);
+CREATE INDEX idx_properties_property ON properties(property);
+
+SHOW INDEX FROM properties;
