@@ -89,9 +89,7 @@ ORDER BY
     itemid;
 
 -- ==========================================================
--- Assessment 2
 -- Business Problem:
---
 -- The Sales Team wants to identify repeat buyers.
 --
 -- Return:
@@ -107,11 +105,23 @@ ORDER BY
 -- 1. Transaction count DESC
 -- 2. Distinct products purchased DESC
 -- ==========================================================
-SELECT visitorid,SUM(CASE WHEN event='transaction' THEN 1 ELSE 0 END) as Total_transactions,COUNT(DISTINCT CASE WHEN event='transactiom' then itemid END) as Distinct_products
+
+SELECT
+    visitorid,
+    SUM(CASE
+        WHEN event = 'transaction' THEN 1
+        ELSE 0
+    END) AS Total_transactions,
+    COUNT(DISTINCT CASE
+        WHEN event = 'transaction' THEN itemid
+    END) AS Distinct_products
 FROM events
 GROUP BY visitorid
-HAVING Total_transactions>2 and Distinct_products>2
-ORDER BY Total_transactions DESC,Distinct_products DESC;
+HAVING Total_transactions > 2
+   AND Distinct_products > 2
+ORDER BY
+    Total_transactions DESC,
+    Distinct_products DESC;
 
 -- ==========================================================
 -- Assessment 3
